@@ -1,22 +1,11 @@
 apply plugin: 'java'
 
-sourceSets {
-    main {
-        java {
-            srcDirs = ['libphonenumber/src']
-            include 'com/google/i18n/phonenumbers/AlternateFormatsCountryCodeSet.java',
-                    'com/google/i18n/phonenumbers/AsYouTypeFormatter.java',
-                    'com/google/i18n/phonenumbers/CountryCodeToRegionCodeMap.java',
-                    'com/google/i18n/phonenumbers/MetadataLoader.java',
-                    'com/google/i18n/phonenumbers/MetadataManager.java',
-                    'com/google/i18n/phonenumbers/NumberParseException.java',
-                    'com/google/i18n/phonenumbers/Phonemetadata.java',
-                    'com/google/i18n/phonenumbers/Phonenumber.java',
-                    'com/google/i18n/phonenumbers/PhoneNumberMatch.java',
-                    'com/google/i18n/phonenumbers/PhoneNumberMatcher.java',
-                    'com/google/i18n/phonenumbers/PhoneNumberUtil.java',
-                    'com/google/i18n/phonenumbers/RegexCache.java',
-                    'com/google/i18n/phonenumbers/ShortNumbersRegionCodeSet.java'
-        }
-    }
+sourceSets.main {
+    java.srcDirs = ['libphonenumber/src', 'geocoder/src', 'internal/prefixmapper/src']
+    resources.srcDirs = ['libphonenumber/src']
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
